@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "solidity-lib"
+		},
+		{
+			"path": "v2-core"
+		},
+		{
+			"path": "v2-periphery"
+		},
+		{
+			"path": "certora"
+		},
+		{
+			"path": "mocks"
+		}
+	],
+	"settings": {
+		"solidity.compileUsingRemoteVersion": "v0.5.16+commit.9c3226ce"
+	}
+}

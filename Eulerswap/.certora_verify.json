@@ -1,0 +1,16 @@
+[
+    {
+        "importFilesToOrigRelpaths": {
+            ".certora_config/0_AuxilaryFunctions.spec.spec": "AuxilaryFunctions.spec"
+        },
+        "primary_contract": "UniswapV2Pair",
+        "specfile": ".certora_config/0_UniswapV2Pair.spec.spec",
+        "specfileOrigRelpath": "certora/specs/UniswapV2Pair.spec",
+        "specfilesToImportDecls": {
+            ".certora_config/0_UniswapV2Pair.spec.spec": [
+                "../../AuxilaryFunctions.spec"
+            ]
+        },
+        "type": "spec"
+    }
+]
