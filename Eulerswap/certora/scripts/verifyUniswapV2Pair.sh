@@ -13,4 +13,6 @@ certoraRun \
 --optimistic_loop \
 --disableLocalTypeChecking \
 --msg "Uniswap v2 BalancesAreGreaterOrEqualToReserves $1" \
---staging \
+
+## --rule <rule name> for only 1 rule
+## --method for only 1 method 
