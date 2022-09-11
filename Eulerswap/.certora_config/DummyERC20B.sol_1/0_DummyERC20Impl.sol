@@ -10,18 +10,18 @@ contract DummyERC20Impl {
     string public symbol;
     uint public decimals;
 
-    function myAddress() public returns (address) {
+    function myAddress() public view returns (address) {
         return address(this);
     }
 
-    function add(uint a, uint b) internal pure returns (uint256) {
-        uint c = a +b;
-        require (c >= a);
-        return c;
+    function add(uint x, uint y) internal pure returns (uint256) {
+        uint z = x +y;
+        require (z >= x);
+        return z;
     }
-    function sub(uint a, uint b) internal pure returns (uint256) {
-        require (a>=b);
-        return a-b;
+    function sub(uint x, uint y) internal pure returns (uint256) {
+        require (x>=y);
+        return x-y;
     }
 
     function totalSupply() external view returns (uint256) {

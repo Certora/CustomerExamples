@@ -1,12 +1,12 @@
 pragma solidity =0.5.16;
 
-import './interfaces/IUniswapV2Pair.sol';
-import 'C:/Users/blaie/Documents/GitHub/AMM/UniswapV2/v2-core/contracts/autoFinder_UniswapV2ERC20.sol';
-import 'C:/Users/blaie/Documents/GitHub/AMM/UniswapV2/v2-core/contracts/libraries/autoFinder_Math.sol';
-import 'C:/Users/blaie/Documents/GitHub/AMM/UniswapV2/v2-core/contracts/libraries/autoFinder_UQ112x112.sol';
-import './interfaces/IERC20.sol';
-import './interfaces/IUniswapV2Factory.sol';
-import './interfaces/IUniswapV2Callee.sol';
+import '../../v2-core/contracts/interfaces/IUniswapV2Pair.sol';
+import 'C:/Users/blaie/Documents/GitHub/CustomerExamples/Eulerswap/v2-core/contracts/autoFinder_UniswapV2ERC20.sol';
+import 'C:/Users/blaie/Documents/GitHub/CustomerExamples/Eulerswap/v2-core/contracts/libraries/autoFinder_Math.sol';
+import 'C:/Users/blaie/Documents/GitHub/CustomerExamples/Eulerswap/v2-core/contracts/libraries/autoFinder_UQ112x112.sol';
+import '../../v2-core/contracts/interfaces/IERC20.sol';
+import '../../v2-core/contracts/interfaces/IUniswapV2Factory.sol';
+import '../../v2-core/contracts/interfaces/IUniswapV2Callee.sol';
 
 contract UniswapV2Pair is IUniswapV2Pair, UniswapV2ERC20 {
     using SafeMath  for uint;

@@ -10,18 +10,18 @@ contract DummyERC20Impl {
     string public symbol;
     uint public decimals;
 
-    function myAddress() public returns (address) {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00050000, 1037618708485) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00050001, 0) }
+    function myAddress() public view returns (address) {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00050000, 1037618708485) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00050001, 0) }
         return address(this);
     }
 
-    function add(uint a, uint b) internal pure returns (uint256) {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00030000, 1037618708483) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00030001, 2) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00031000, a) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00031001, b) }
-        uint c = a +b;
-        require (c >= a);
-        return c;
+    function add(uint x, uint y) internal pure returns (uint256) {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00030000, 1037618708483) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00030001, 2) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00031000, x) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00031001, y) }
+        uint z = x +y;
+        require (z >= x);
+        return z;
     }
-    function sub(uint a, uint b) internal pure returns (uint256) {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00040000, 1037618708484) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00040001, 2) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00041000, a) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00041001, b) }
-        require (a>=b);
-        return a-b;
+    function sub(uint x, uint y) internal pure returns (uint256) {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00040000, 1037618708484) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00040001, 2) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00041000, x) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00041001, y) }
+        require (x>=y);
+        return x-y;
     }
 
     function totalSupply() external view returns (uint256) {

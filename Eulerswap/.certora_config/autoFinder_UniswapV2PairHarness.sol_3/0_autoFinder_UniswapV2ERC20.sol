@@ -1,7 +1,7 @@
 pragma solidity =0.5.16;
 
 import './interfaces/IUniswapV2ERC20.sol';
-import 'C:/Users/blaie/Documents/GitHub/AMM/UniswapV2/v2-core/contracts/libraries/autoFinder_SafeMath.sol';
+import 'C:/Users/blaie/Documents/GitHub/CustomerExamples/Eulerswap/v2-core/contracts/libraries/autoFinder_SafeMath.sol';
 
 contract UniswapV2ERC20 is IUniswapV2ERC20 {
     using SafeMath for uint;
@@ -49,12 +49,12 @@ contract UniswapV2ERC20 is IUniswapV2ERC20 {
         emit Transfer(from, address(0), value);
     }
 
-    function _approve(address owner, address spender, uint value) private {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00120000, 1037618708498) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00120001, 3) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00121000, owner) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00121001, spender) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00121002, value) }
+    function _approve(address owner, address spender, uint value) private {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00170000, 1037618708503) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00170001, 3) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00171000, owner) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00171001, spender) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00171002, value) }
         allowance[owner][spender] = value;
         emit Approval(owner, spender, value);
     }
 
-    function _transfer(address from, address to, uint value) private {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00130000, 1037618708499) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00130001, 3) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00131000, from) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00131001, to) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00131002, value) }
+    function _transfer(address from, address to, uint value) private {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00180000, 1037618708504) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00180001, 3) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00181000, from) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00181001, to) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00181002, value) }
         balanceOf[from] = balanceOf[from].sub(value);
         balanceOf[to] = balanceOf[to].add(value);
         emit Transfer(from, to, value);
