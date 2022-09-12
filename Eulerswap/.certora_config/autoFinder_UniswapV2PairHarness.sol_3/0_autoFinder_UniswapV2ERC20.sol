@@ -37,24 +37,24 @@ contract UniswapV2ERC20 is IUniswapV2ERC20 {
         );
     }
 
-    function _mint(address to, uint value) internal {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a0000, 1037618708490) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a0001, 2) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a1000, to) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a1001, value) }
+    function _mint(address to, uint value) internal {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00080000, 1037618708488) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00080001, 2) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00081000, to) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00081001, value) }
         totalSupply = totalSupply.add(value);
         balanceOf[to] = balanceOf[to].add(value);
         emit Transfer(address(0), to, value);
     }
 
-    function _burn(address from, uint value) internal {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00080000, 1037618708488) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00080001, 2) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00081000, from) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00081001, value) }
+    function _burn(address from, uint value) internal {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00090000, 1037618708489) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00090001, 2) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00091000, from) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00091001, value) }
         balanceOf[from] = balanceOf[from].sub(value);
         totalSupply = totalSupply.sub(value);
         emit Transfer(from, address(0), value);
     }
 
-    function _approve(address owner, address spender, uint value) private {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00170000, 1037618708503) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00170001, 3) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00171000, owner) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00171001, spender) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00171002, value) }
+    function _approve(address owner, address spender, uint value) private {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00190000, 1037618708505) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00190001, 3) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00191000, owner) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00191001, spender) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00191002, value) }
         allowance[owner][spender] = value;
         emit Approval(owner, spender, value);
     }
 
-    function _transfer(address from, address to, uint value) private {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00180000, 1037618708504) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00180001, 3) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00181000, from) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00181001, to) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00181002, value) }
+    function _transfer(address from, address to, uint value) private {assembly { mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a0000, 1037618708506) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a0001, 3) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a1000, from) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a1001, to) mstore(0xffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a1002, value) }
         balanceOf[from] = balanceOf[from].sub(value);
         balanceOf[to] = balanceOf[to].add(value);
         emit Transfer(from, to, value);

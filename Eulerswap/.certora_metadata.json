@@ -6,21 +6,21 @@
         "build_only": false,
         "bytecode_jsons": null,
         "bytecode_spec": null,
-        "cache": ".\\certora\\harness\\DummyERC20A.sol:DummyERC20A-.\\certora\\harness\\DummyERC20B.sol:DummyERC20B-.\\certora\\harness\\UniswapV2FactoryHarness.sol:UniswapV2Factory-.\\certora\\harness\\UniswapV2PairHarness.sol:UniswapV2Pair-optimisticTrue-iter3",
+        "cache": ".\\certora\\harness\\DummyERC20A.sol:DummyERC20A-.\\certora\\harness\\DummyERC20B.sol:DummyERC20B-.\\certora\\harness\\UniswapV2FactoryHarness.sol:UniswapV2FactoryHarness-.\\certora\\harness\\UniswapV2PairHarness.sol:UniswapV2PairHarness-optimisticTrue-iter3",
         "check_args": false,
-        "cloud": null,
+        "cloud": "production",
         "coinbaseMode": false,
         "contract_to_file": {
             "DummyERC20A": "certora\\harness\\DummyERC20A.sol",
             "DummyERC20B": "certora\\harness\\DummyERC20B.sol",
-            "UniswapV2Factory": "certora\\harness\\UniswapV2FactoryHarness.sol",
-            "UniswapV2Pair": "certora\\harness\\UniswapV2PairHarness.sol"
+            "UniswapV2FactoryHarness": "certora\\harness\\UniswapV2FactoryHarness.sol",
+            "UniswapV2PairHarness": "certora\\harness\\UniswapV2PairHarness.sol"
         },
         "contracts": [
+            "UniswapV2FactoryHarness",
             "DummyERC20B",
-            "UniswapV2Pair",
             "DummyERC20A",
-            "UniswapV2Factory"
+            "UniswapV2PairHarness"
         ],
         "debug": null,
         "debug_topics": false,
@@ -29,13 +29,13 @@
         "disable_auto_cache_key_gen": false,
         "dynamic_bound": null,
         "dynamic_dispatch": false,
-        "env": "master",
+        "env": "production",
         "expected_file": "expected.json",
         "file_paths": [
-            "certora\\harness\\UniswapV2FactoryHarness.sol",
-            "certora\\harness\\UniswapV2PairHarness.sol",
             "certora\\harness\\DummyERC20B.sol",
-            "certora\\harness\\DummyERC20A.sol"
+            "certora\\harness\\UniswapV2PairHarness.sol",
+            "certora\\harness\\DummyERC20A.sol",
+            "certora\\harness\\UniswapV2FactoryHarness.sol"
         ],
         "file_to_contract": {
             "certora\\harness\\DummyERC20A.sol": [
@@ -45,17 +45,17 @@
                 "DummyERC20B"
             ],
             "certora\\harness\\UniswapV2FactoryHarness.sol": [
-                "UniswapV2Factory"
+                "UniswapV2FactoryHarness"
             ],
             "certora\\harness\\UniswapV2PairHarness.sol": [
-                "UniswapV2Pair"
+                "UniswapV2PairHarness"
             ]
         },
         "files": [
             ".\\certora\\harness\\DummyERC20A.sol:DummyERC20A",
             ".\\certora\\harness\\DummyERC20B.sol:DummyERC20B",
-            ".\\certora\\harness\\UniswapV2FactoryHarness.sol:UniswapV2Factory",
-            ".\\certora\\harness\\UniswapV2PairHarness.sol:UniswapV2Pair"
+            ".\\certora\\harness\\UniswapV2FactoryHarness.sol:UniswapV2FactoryHarness",
+            ".\\certora\\harness\\UniswapV2PairHarness.sol:UniswapV2PairHarness"
         ],
         "get_conf": null,
         "include_empty_fallback": false,
@@ -63,9 +63,9 @@
         "jar": null,
         "java_args": null,
         "link": [
-            "UniswapV2Pair:factory=UniswapV2Factory",
-            "UniswapV2Pair:token0=DummyERC20A",
-            "UniswapV2Pair:token1=DummyERC20B"
+            "UniswapV2PairHarness:factory=UniswapV2FactoryHarness",
+            "UniswapV2PairHarness:token0=DummyERC20A",
+            "UniswapV2PairHarness:token1=DummyERC20B"
         ],
         "local": false,
         "log_branch": null,
@@ -76,7 +76,7 @@
         "max_poll_minutes": null,
         "method": null,
         "mode": "Mode.VERIFY",
-        "msg": "Eulerswap swapIncreaseK",
+        "msg": "Eulerswap PairTest",
         "multi_assert_check": false,
         "no_compare": false,
         "optimistic_loop": true,
@@ -88,15 +88,12 @@
         "process": "emv",
         "prototype": null,
         "queue_wait_minutes": null,
-        "rule": [
-            "swapIncreaseK"
-        ],
+        "rule": null,
         "rule_sanity": null,
         "send_only": false,
         "settings": [
             "-assumeUnwindCond",
-            "-b=3",
-            "-rule=swapIncreaseK"
+            "-b=3"
         ],
         "short_output": false,
         "skip_payable_envfree_check": false,
@@ -105,9 +102,9 @@
         "solc_args": null,
         "solc_map": null,
         "spec_files": [
-            ".\\certora\\specs\\UniswapV2Pair.spec"
+            ".\\certora\\specs\\pair_rules.spec"
         ],
-        "staging": "master",
+        "staging": null,
         "struct_link": null,
         "tool_output": null,
         "typecheck_only": false,
@@ -116,33 +113,30 @@
             "certora\\harness\\UniswapV2PairHarness.sol"
         ],
         "verify": [
-            "UniswapV2Pair:.\\certora\\specs\\UniswapV2Pair.spec"
+            "UniswapV2PairHarness:.\\certora\\specs\\pair_rules.spec"
         ]
     },
     "branch": "master",
     "conf": {
+        "cloud": "production",
         "files": [
             ".\\certora\\harness\\DummyERC20A.sol:DummyERC20A",
             ".\\certora\\harness\\DummyERC20B.sol:DummyERC20B",
-            ".\\certora\\harness\\UniswapV2FactoryHarness.sol:UniswapV2Factory",
-            ".\\certora\\harness\\UniswapV2PairHarness.sol:UniswapV2Pair"
+            ".\\certora\\harness\\UniswapV2FactoryHarness.sol:UniswapV2FactoryHarness",
+            ".\\certora\\harness\\UniswapV2PairHarness.sol:UniswapV2PairHarness"
         ],
         "link": [
-            "UniswapV2Pair:factory=UniswapV2Factory",
-            "UniswapV2Pair:token0=DummyERC20A",
-            "UniswapV2Pair:token1=DummyERC20B"
+            "UniswapV2PairHarness:factory=UniswapV2FactoryHarness",
+            "UniswapV2PairHarness:token0=DummyERC20A",
+            "UniswapV2PairHarness:token1=DummyERC20B"
         ],
         "loop_iter": "3",
-        "msg": "Eulerswap swapIncreaseK",
+        "msg": "Eulerswap PairTest",
         "optimistic_loop": true,
         "process": "emv",
-        "rule": [
-            "swapIncreaseK"
-        ],
         "solc": "solc5.16",
-        "staging": "master",
         "verify": [
-            "UniswapV2Pair:.\\certora\\specs\\UniswapV2Pair.spec"
+            "UniswapV2PairHarness:.\\certora\\specs\\pair_rules.spec"
         ]
     },
     "cwd_relative": "Eulerswap",
@@ -150,27 +144,25 @@
     "origin": "https://github.com/Certora/CustomerExamples.git",
     "raw_args": [
         "C:\\Users\\blaie\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\certoraRun",
-        ".\\certora\\harness\\UniswapV2PairHarness.sol:UniswapV2Pair",
-        ".\\certora\\harness\\UniswapV2FactoryHarness.sol:UniswapV2Factory",
+        ".\\certora\\harness\\UniswapV2PairHarness.sol:UniswapV2PairHarness",
+        ".\\certora\\harness\\UniswapV2FactoryHarness.sol:UniswapV2FactoryHarness",
         ".\\certora\\harness\\DummyERC20A.sol:DummyERC20A",
         ".\\certora\\harness\\DummyERC20B.sol:DummyERC20B",
         "--verify",
-        "UniswapV2Pair:.\\certora\\specs\\UniswapV2Pair.spec",
+        "UniswapV2PairHarness:.\\certora\\specs\\pair_rules.spec",
         "--link",
-        "UniswapV2Pair:factory=UniswapV2Factory",
-        "UniswapV2Pair:token0=DummyERC20A",
-        "UniswapV2Pair:token1=DummyERC20B",
+        "UniswapV2PairHarness:factory=UniswapV2FactoryHarness",
+        "UniswapV2PairHarness:token0=DummyERC20A",
+        "UniswapV2PairHarness:token1=DummyERC20B",
         "--solc",
         "solc5.16",
-        "--rule",
-        "swapIncreaseK",
-        "--staging",
         "--loop_iter",
         "3",
         "--optimistic_loop",
+        "--cloud",
         "--msg",
-        "Eulerswap swapIncreaseK"
+        "Eulerswap PairTest"
     ],
-    "revision": "e79bfcd56f41eb7737a3abed4c52228099e9eed4",
-    "timestamp": "1662834050.001922"
+    "revision": "3bb672a9dada687436baa9cc6dcaee177276e8bc",
+    "timestamp": "1663011063.525999"
 }

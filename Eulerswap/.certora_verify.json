@@ -1,14 +1,20 @@
 [
     {
         "importFilesToOrigRelpaths": {
-            ".certora_config/0_methods.spec.spec": "certora\\specs\\methods.spec"
+            ".certora_config/0_pair_definitions.spec.spec": "certora\\specs\\pair_definitions.spec",
+            ".certora_config/0_pair_methods.spec.spec": "certora\\specs\\pair_methods.spec",
+            ".certora_config/0_sqrt_summarization.spec.spec": "certora\\summarizations\\sqrt_summarization.spec"
         },
-        "primary_contract": "UniswapV2Pair",
-        "specfile": ".certora_config/0_UniswapV2Pair.spec.spec",
-        "specfileOrigRelpath": "certora/specs/UniswapV2Pair.spec",
+        "primary_contract": "UniswapV2PairHarness",
+        "specfile": ".certora_config/0_pair_rules.spec.spec",
+        "specfileOrigRelpath": "certora/specs/pair_rules.spec",
         "specfilesToImportDecls": {
-            ".certora_config/0_UniswapV2Pair.spec.spec": [
-                "methods.spec"
+            ".certora_config/0_pair_methods.spec.spec": [
+                "../summarizations/sqrt_summarization.spec"
+            ],
+            ".certora_config/0_pair_rules.spec.spec": [
+                "pair_definitions.spec",
+                "pair_methods.spec"
             ]
         },
         "type": "spec"
