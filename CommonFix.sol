@@ -60,7 +60,7 @@ contract TestPRBFix
 /// @param y The multiplier as an uint256.
 /// @param denominator The divisor as an uint256.
 /// @return result The result as an uint256.
-function mulDivFloor(uint256 x, uint256 y, uint256 denominator) pure returns (uint256 result) {
+function mulDivFloor(uint256 x, uint256 y, uint256 denominator) public pure returns (uint256 result) {
     // 512-bit multiply [prod1 prod0] = x * y. Compute the product mod 2^256 and mod 2^256 - 1, then use
     // use the Chinese Remainder Theorem to reconstruct the 512 bit result. The result is stored in two 256
     // variables such that product = prod1 * 2^256 + prod0.
@@ -156,7 +156,7 @@ function mulDivFloor(uint256 x, uint256 y, uint256 denominator) pure returns (ui
 /// @param denominator The divisor as an uint256.
 /// @return result The result as an uint256.
 
-function mulDivCeil(uint256 x, uint256 y, uint256 denominator) pure returns (uint256 result) {
+function mulDivCeil(uint256 x, uint256 y, uint256 denominator) public pure returns (uint256 result) {
     // 512-bit multiply [prod1 prod0] = x * y. Compute the product mod 2^256 and mod 2^256 - 1, then use
     // use the Chinese Remainder Theorem to reconstruct the 512 bit result. The result is stored in two 256
     // variables such that product = prod1 * 2^256 + prod0.
@@ -266,7 +266,7 @@ function mulDivCeil(uint256 x, uint256 y, uint256 denominator) pure returns (uin
 /// @param y The multiplier as an int256.
 /// @param denominator The divisor as an int256.
 /// @return result The result as an int256.
-function mulDivFloorSigned(int256 x, int256 y, int256 denominator) pure returns (int256) {
+function mulDivFloorSigned(int256 x, int256 y, int256 denominator) public pure returns (int256) {
     if (x == type(int256).min || y == type(int256).min || denominator == type(int256).min) {
         revert PRBMath_MulDivSigned_InputTooSmall();
     }
