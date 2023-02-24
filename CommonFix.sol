@@ -244,11 +244,12 @@ function mulDivCeil(uint256 x, uint256 y, uint256 denominator) pure returns (uin
         result = prod0 * inverse;
     }
     assembly ("memory-safe") {
-        result := add(result , iszero(remainder)) // this causes overflow iff ((remainder != 0) and (result == MAX_UINT256)) in which case the resulting value of result after this line is zero. 
+        result := add(result , iszero(iszero(remainder))) // iszero(iszero(q)) returns 1 if q==0 and 0 otherwise
+        // this causes overflow iff ((remainder != 0) and (result == MAX_UINT256)) in which case the resulting value of result after this line is zero. 
     }
     // Remark: we know that prod1 != 0 => x,y !=0. Thus we can have result == 0 only if we had an overflow.
     if (result == 0)
-    { revert PRBMath_MulDiv_Overflow(); } 
+    { revert PRBMath_MulDiv_Overflow(x,y,denominator); } 
     else 
     { return result; }
 }
